@@ -308,6 +308,8 @@ public class mastUtils {
 		if (t.getParent() != null) { // Base case is parent == null, in that case we don't do anything else
 			backPropagate(t.getParent(), machine, goalVal, moveList, takenJM, Qmast);
 		}
+		else
+			t.incrNoIterations();
 	}
 
 	public static void updateQmast(Map<Pair<Integer,Move>,Pair<Double,Integer>> Qmast, List<Move> jointMove, double[] goalVal) {

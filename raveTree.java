@@ -33,6 +33,7 @@ public class raveTree {
 	private int[][] Ns = null; // Counts how many times each child state has been visited
 	private int[][] Nrave = null;
 	private int N = 0;
+	private int iterations = 0;
 
 	public raveTree(MachineState state, raveTree parent, StateMachine sm) throws MoveDefinitionException {
 		this.state = state;
@@ -200,6 +201,16 @@ public class raveTree {
 
 	public void incrNoSimulation() {
 		N++;
+	}
+
+	public int getNoIterations()
+	{
+		return iterations;
+	}
+
+	public void incrNoIterations()
+	{
+		iterations++;
 	}
 
 	@Override

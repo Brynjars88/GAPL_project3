@@ -31,6 +31,7 @@ public class mastTree {
 	private double[][] Qs = null; // 2d array of Q values for each role for each move
 	private int[][] Ns = null; // Counts how many times each child state has been visited
 	private int N = 0;
+	private int iterations = 0;
 
 	public mastTree(MachineState state, mastTree parent, StateMachine sm) throws MoveDefinitionException {
 		this.state = state;
@@ -170,6 +171,16 @@ public class mastTree {
 
 	public void incrNoSimulation() {
 		N++;
+	}
+
+	public int getNoIterations()
+	{
+		return iterations;
+	}
+
+	public void incrNoIterations()
+	{
+		iterations++;
 	}
 
 	@Override
